@@ -1,0 +1,16 @@
+{
+  "name": "mongodb-texas-poker",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\" \"npm run dev:dashboard\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npx vite --port 5173",
+    "dev:dashboard": "cd dashboard && npx vite --port 5174",
+    "setup": "cd server && node src/scripts/setupAtlasIndex.js",
+    "install:all": "cd server && npm install && cd ../client && npm install && cd ../dashboard && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
